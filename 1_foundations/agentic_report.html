@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Agentic AI – Opportunity & MVP</title>
+<!-- Minimal, readable styling -->
+<style>
+  :root {
+    --bg: #0f172a;
+    --card: #111827;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --accent: #60a5fa;
+  }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 24px;
+    background: var(--card);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.3);
+  }
+  h1, h2, h3 { line-height: 1.25; }
+  h1 { font-size: 1.875rem; margin: 0 0 1rem; }
+  h2 { font-size: 1.35rem; margin-top: 2rem; border-bottom: 1px solid #1f2937; padding-bottom: .4rem; }
+  a { color: var(--accent); text-decoration: none; }
+  pre, code {
+    background: #0b1220;
+    border-radius: 8px;
+  }
+  pre {
+    padding: 12px;
+    overflow-x: auto;
+  }
+  blockquote {
+    margin: 0;
+    padding-left: 1rem;
+    border-left: 3px solid #374151;
+    color: var(--muted);
+  }
+  .meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+</style>
+
+<!-- marked.js for Markdown rendering -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<!-- MathJax for LaTeX rendering -->
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[','\\]']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="meta">Generated report</div>
+    <div id="content">Loading…</div>
+  </div>
+  <script>
+    const md = "# Agentic AI \u2013 Opportunity & MVP\n\n## Business Idea\n\nA promising business area for an Agentic AI solution is **enterprise IT operations and incident management**. \n\nWhy?  \n- IT environments are increasingly complex, with numerous interconnected systems generating vast amounts of data and incidents.  \n- Current tools often require manual intervention, slow root-cause analysis, and repetitive tasks.  \n- An Agentic AI could autonomously monitor systems, diagnose issues, execute remediation steps, and communicate updates with minimal human input.  \n- This would reduce downtime, accelerate incident resolution, and free IT staff to focus on strategic initiatives.  \n\nIn summary, enterprise IT operations is ripe for an Agentic AI that acts proactively and autonomously to maintain system health.\n\n## Primary Pain Point\n\nA specific primary pain point is **the slow and error-prone root cause analysis during IT incident resolution**, where manual triage delays fixes and increases downtime.  \n\nAn Agentic AI can autonomously correlate logs, metrics, and alerts across systems to quickly identify the underlying cause and initiate targeted remediation steps, significantly reducing resolution time and human error.\n\n## MVP Plan\n\n**MVP Plan for Agentic AI in IT Incident Root Cause Analysis**\n\n1. **Data Integration & Monitoring Setup**  \n   - Connect AI to a limited set of key IT systems and log sources (e.g., servers, network devices, application logs).  \n   - Implement continuous real-time data ingestion and alert monitoring.  \n   - *Success Metrics:* 90% data coverage of targeted systems; real-time data latency <1 min.  \n   - *Blockers:* Data format heterogeneity; access permissions and security constraints.\n\n2. **Automated Incident Correlation & Root Cause Identification**  \n   - Develop AI models to correlate alerts/logs and pinpoint probable root causes for common incident types.  \n   - *Success Metrics:* Root cause accuracy \u226570% on pilot incidents; average identification time <5 mins.  \n   - *Blockers:* Insufficient training data; complex or novel incident patterns.\n\n3. **Autonomous Remediation Recommendation Engine**  \n   - Provide AI-generated actionable remediation steps or runbooks for identified root causes.  \n   - *Success Metrics:* 80% of recommendations deemed relevant by IT staff; reduction in manual triage time by 30%.  \n   - *Blockers:* Variability in remediation procedures; risk aversion to automated suggestions.\n\n4. **Human-in-the-Loop Feedback Loop**  \n   - Enable IT teams to confirm, override, or refine AI findings and recommendations to improve model learning.  \n   - *Success Metrics:* User engagement rate \u226575%; model accuracy improvement of 10% after feedback cycles.  \n   - *Blockers:* User adoption resistance; complexity in feedback capture UX.\n\n5. **Pilot Deployment & Performance Monitoring**  \n   - Deploy MVP in a controlled IT environment and measure impact on incident resolution metrics.  \n   - *Success Metrics:* Incident resolution time reduced by \u226525%; number of incidents handled autonomously increases over time.  \n   - *Blockers:* Integration challenges; unexpected incident types not covered by MVP.\n\n---\n\nThis phased MVP focuses on delivering clear, measurable value while iteratively addressing technical and adoption challenges.\n\n";
+    const html = marked.parse(md);
+    document.getElementById('content').innerHTML = html;
+    if (window.MathJax) {
+      MathJax.typesetPromise();
+    }
+  </script>
+</body>
+</html>
